@@ -22,3 +22,11 @@ RIGHT_SPI = {
     "miso": board.MISO_1,
     "sck": board.SCK_1
 }
+
+# Control panel input
+GRID_ROW_PIN_NUMBERS = [i for i in range(7)]
+SOLO_SWITCH_PIN_NUMBER = 7
+GRID_COLUMN_PIN_NUMBERS = [i for i in range(8, 13)]
+LEVER_LEFT_PIN_NUMBER = 13
+LEVER_RIGHT_PIN_NUMBER = 14
+EXTRA_INPUT = 15 # Unpopulated to the right of the io expander chip
