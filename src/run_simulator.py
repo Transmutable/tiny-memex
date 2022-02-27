@@ -84,11 +84,11 @@ left_text = ""
 right_text = ""
 frame_index = 0
 while True:
-	frame_index = (frame_index + 1) % 10
+	frame_index = (frame_index + 1) % 6
 	dt = datetime.datetime.now()
 	new_left_text = "%02i:%02i" % (dt.hour, dt.minute)
 
-	if frame_index > 4:
+	if frame_index > 2:
 		new_right_text = "%s" % str(socket.gethostname() or "no hostname")
 	else:
 		ip_address = get_local_ip_address()
@@ -100,4 +100,4 @@ while True:
 	if right_text != new_right_text:
 		right_text = new_right_text
 		write(right_draw, memex.right_display, memex.right_image, right_text, host_font, host_color)
-	time.sleep(1)
+	time.sleep(2.5)
