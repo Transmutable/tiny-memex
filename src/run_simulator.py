@@ -15,11 +15,11 @@ memex = TinyMemex()
 left_draw = ImageDraw.Draw(memex.left_image)
 right_draw = ImageDraw.Draw(memex.right_image)
 
-time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 48)
-time_color = (255, 128, 128) 
+time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 64)
+time_color = (255, 80, 80) 
 
 host_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
-host_color = (128, 128, 255)
+host_color = (80, 80, 255)
 
 
 def blank(draw, display, image):
@@ -80,9 +80,6 @@ def get_local_ip_address():
 blank(left_draw, memex.left_display, memex.left_image)
 blank(right_draw, memex.right_display, memex.right_image)
 
-for iface, ip in get_local_interfaces().items():
-	print("{ip:15s} {iface}".format(ip=ip, iface=iface))
-
 left_text = ""
 right_text = ""
 frame_index = 0
@@ -92,10 +89,10 @@ while True:
 	new_left_text = "%02i:%02i" % (dt.hour, dt.minute)
 
 	if frame_index > 4:
-		new_right_text = "%s" % socket.gethostname()
+		new_right_text = "%s" % str(socket.gethostname() or "no hostname")
 	else:
 		ip_address = get_local_ip_address()
-		new_right_text = "%s" % ip_address
+		new_right_text = "%s" % str(ip_address or "no ip address")
 
 	if left_text != new_left_text:
 		left_text = new_left_text
