@@ -32,7 +32,7 @@ Now eject the SD card, insert it into the Raspberry Pi, and insert the USB-C pow
 
 Wait a couple of minutes, then ping 'raspberrypi' or 'raspberrypi.local' until you get a response. Once it returns pings, ssh into your Tiny Memex:
 
-	ssh pi@raspberrypi # the username is 'raspberry'
+	ssh pi@raspberrypi # the password is 'raspberry'
 
 Once you're connected it's time to become root and set up the base software:
 
@@ -44,7 +44,7 @@ Run the Raspberry Pi OS configurator:
 
 	raspi-config
 
-Use the menus to set your password. (Trevor always uses 'vannevar')
+Use the menus to set your password. (Trevor uses 'vannevar' for new Tiny Memex)
 
 Use the menus to set the hostname to 'tinymemex-??' where ?? is your serial number (01 through 20). For the rest of this document we'll use 'tinymemex-01' but be sure to use your hostname.
 
@@ -98,3 +98,6 @@ As the pi account (not root):
 	cd # takes you to your home directory at '/home/pi/'
 	git clone https://github.com/Transmutable/tiny-memex.git
 
+## Troubleshooting
+
+Adafruit has an excellent [Raspberry Pi Care and Troubleshooting](https://learn.adafruit.com/raspberry-pi-care-and-troubleshooting) guide with many good tips and tricks for working out and preventing problems.
