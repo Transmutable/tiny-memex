@@ -2,6 +2,7 @@
 
 These instructions are for the 64 bit version of Raspberry Pi OS Lite released on January 28th 2022 running on a Raspberry Pi 4 B.
 
+When you receive your Tiny Memex from Trevor these steps will have been already completed and you don't need to go any further. This document is for setting up a brand new RPOS installation.
 
 ## Raspberry OS configuration
 
@@ -52,8 +53,6 @@ Use the menus to enable SPI.
 
 Use the menus to enable I2C.
 
-Use the menus to enable SSH.
-
 Exit raspi-config.
 
 Add a new line to the bottom of '/boot/config.txt' that contains `dtoverlay=spi1-3cs` (no quotes).
@@ -67,15 +66,15 @@ Wait a couple of minutes then ssh back in and become root:
 	ssh pi@tinymemex-01 # remember to use your new hostname and password
 	sudo su -
 
-As root, run the following commands:
+As root, run the following commands to install required libraries and command line tools:
 
 	apt install -y git python3-pip
-	pip install --upgrade -y setuptools adafruit-python-shell
+	pip install --upgrade setuptools adafruit-python-shell
 	wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 	python raspi-blinka.py # this takes a few minutes
 	rm raspi-blinka.py
 
-Reboot again (`shutdown -r now`), wait, ssh in, and become root with `sudo su -`.
+If raspi-blinka.py offers to reboot then let it. Otherwise run `shutdown -r now` and wait. Then ssh in and become root with `sudo su -`.
 
 As root, run:
 
@@ -93,7 +92,11 @@ Now go back to being 'pi' by exiting the root shell: `exit`
 
 ## Get the Tiny Memex example service and Python code
 
-As the pi account (not root):
+Ask Trevor to give your GitHub accounts permission to clone the Tiny Memex repo.
+
+In the meantime, go back to being the 'pi' account (not root) and create and install an SSH key for GitHub using [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), being sure to follow the Linux instructions. Now go to GitHub and install your new key in your GitHub account using [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+As the pi account (again, not root):
 
 	cd # takes you to your home directory at '/home/pi/'
 	git clone https://github.com/Transmutable/tiny-memex.git
