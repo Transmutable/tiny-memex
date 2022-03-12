@@ -101,6 +101,15 @@ As the pi account (again, not root):
 	cd # takes you to your home directory at '/home/pi/'
 	git clone https://github.com/Transmutable/tiny-memex.git
 
+## Install the Tiny Memex service
+
+As root (`sudo su -`):
+
+	ln -s /home/pi/tiny-memex/etc/systemd/tiny-memex.service /etc/systemd/system/tiny-memex.service
+	systemctl enable tiny-memex
+
+Now the system will automatically run '/home/pi/tiny-memex/src/run_simulator.py'. See [./PROGRAMMING.md] for more information about using your Tiny Memex's custom hardware.
+
 ## Troubleshooting
 
 Adafruit has an excellent [Raspberry Pi Care and Troubleshooting](https://learn.adafruit.com/raspberry-pi-care-and-troubleshooting) guide with many good tips and tricks for working out and preventing problems.
