@@ -19,7 +19,7 @@ time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 time_color = (255, 80, 80) 
 
 host_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
-host_color = (80, 80, 255)
+host_color = (80, 00, 255)
 
 
 def blank(draw, display, image):
@@ -84,12 +84,18 @@ left_text = ""
 right_text = ""
 frame_index = 0
 while True:
-	frame_index = (frame_index + 1) % 6
+	frame_index = (frame_index + 1) % 5
 	dt = datetime.datetime.now()
 	new_left_text = "%02i:%02i" % (dt.hour, dt.minute)
 
-	if frame_index > 2:
+	if frame_index < 1:
 		new_right_text = "%s" % str(socket.gethostname() or "no hostname")
+	elif frame_index < 2:
+		new_right_text = "%s" % "Hi Alan"
+	elif frame_index < 3:
+		new_right_text = "%s" % "Vanessa was here"
+	elif frame_index < 4:
+		new_right_text = "%s" % "David too"
 	else:
 		ip_address = get_local_ip_address()
 		new_right_text = "%s" % str(ip_address or "no ip address")
