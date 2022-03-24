@@ -1,0 +1,12 @@
+[Unit]
+Description=Mirror framebuffer across both tiny-memex LCDs
+Conflicts=tiny-memex
+
+[Service]
+Type=simple
+ExecStart=/home/pi/tiny-memex/src/dual-tftcp/dual-tftcp
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
