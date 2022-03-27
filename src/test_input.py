@@ -4,6 +4,9 @@ import sys
 import time
 from tiny_memex import TinyMemex
 
+# This script repeatedly prints true or false for each button and the lever switch
+# usage: ~/tiny-memex/src/test_input.py
+
 def run_test():
 	memex = TinyMemex()
 

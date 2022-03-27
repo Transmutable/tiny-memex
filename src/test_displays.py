@@ -7,6 +7,10 @@ from tiny_memex import TinyMemex
 
 FONTSIZE = 48
 
+# This script draws a string on each display
+# usage: ~/tiny-memex/src/test_displays.py
+# alternate: ~/tiny-memex/src/test_displays.py "A Nice" Word
+
 memex = TinyMemex()
 left_draw = ImageDraw.Draw(memex.left_image)
 right_draw = ImageDraw.Draw(memex.right_image)

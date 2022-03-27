@@ -92,14 +92,14 @@ Now go back to being 'pi' by exiting the root shell: `exit`
 
 ## Get the Tiny Memex example service and Python code
 
-Ask Trevor to give your GitHub accounts permission to clone the Tiny Memex repo.
+Here is the Tiny Memex repo: https://github.com/Transmutable/tiny-memex
 
-In the meantime, go back to being the 'pi' account (not root) and create and install an SSH key for GitHub using [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), being sure to follow the Linux instructions. Now go to GitHub and install your new key in your GitHub account using [these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
-
-As the pi account (again, not root):
+To get the repo files, as the pi account (again, not root) run the following:
 
 	cd # takes you to your home directory at '/home/pi/'
 	git clone https://github.com/Transmutable/tiny-memex.git
+
+Now you should have a directory in '/home/pi/src/tiny-memex/' that contains the instructions and example Python code.
 
 ## Install the Tiny Memex service
 
@@ -108,8 +108,14 @@ As root (`sudo su -`):
 	ln -s /home/pi/tiny-memex/etc/systemd/tiny-memex.service /etc/systemd/system/tiny-memex.service
 	systemctl enable tiny-memex
 
-Now the system will automatically run '/home/pi/tiny-memex/src/run_simulator.py'. See [./PROGRAMMING.md] for more information about using your Tiny Memex's custom hardware.
+Now the system will automatically run '/home/pi/tiny-memex/src/run_simulator.py' on boot. See [./PROGRAMMING.md] (TBD) for more information about using your Tiny Memex's custom hardware.
+
+To manually start and stop the tiny-memex service you'll use 'systemctl' like so:
+
+	sudo systemctl start tiny-memex # This starts it
+	sudo systemctl stop  tiny-memex # this stops it
 
 ## Troubleshooting
 
 Adafruit has an excellent [Raspberry Pi Care and Troubleshooting](https://learn.adafruit.com/raspberry-pi-care-and-troubleshooting) guide with many good tips and tricks for working out and preventing problems.
+

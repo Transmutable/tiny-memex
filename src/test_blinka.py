@@ -6,6 +6,9 @@ import busio
 from adafruit_mcp230xx.mcp23017 import MCP23017
 from tiny_memex import LEFT_SPI, RIGHT_SPI, CONTROL_PANEL_ADDRESS
 
+# This script tests whether Python can connect to the inputs via I2C and the displays via SPI
+# usage: ~/tiny-memex/src/test_blinka.py
+
 print("Testing  IO: ", end='')
 pin = digitalio.DigitalInOut(board.D4)
 print("OK")

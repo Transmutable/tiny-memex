@@ -4,6 +4,9 @@ from PIL import ImageDraw
 
 from tiny_memex import TinyMemex
 
+# This script clears the displays by drawing black rectangles
+# usage: ~/tiny-memex/src/blank_displays.py
+
 memex = TinyMemex()
 left_draw = ImageDraw.Draw(memex.left_image)
 right_draw = ImageDraw.Draw(memex.right_image)
