@@ -108,12 +108,16 @@ As root (`sudo su -`):
 	ln -s /home/pi/tiny-memex/etc/systemd/tiny-memex.service /etc/systemd/system/tiny-memex.service
 	systemctl enable tiny-memex
 
-Now the system will automatically run '/home/pi/tiny-memex/src/run_simulator.py' on boot. See [./PROGRAMMING.md] (TBD) for more information about using your Tiny Memex's custom hardware.
+Now the system will automatically run `/home/pi/tiny-memex/src/run_simulator.py` on boot. See [./PROGRAMMING.md] (TBD) for more information about using your Tiny Memex's custom hardware.
 
 To manually start and stop the tiny-memex service you'll use 'systemctl' like so:
 
-	sudo systemctl start tiny-memex # This starts it
-	sudo systemctl stop  tiny-memex # this stops it
+	sudo systemctl start tiny-memex
+	sudo systemctl stop  tiny-memex
+
+To see logs for the tiny-memex service run `journalctl -u tiny-memex.service`
+
+If the logs reveal that running permission is denied then you may need to change the python file permissions by running `chmod +x ~/tiny-memex/src/*.py`
 
 ## Troubleshooting
 
