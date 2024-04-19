@@ -1,9 +1,7 @@
-# 20 Tiny Memex
+# Tiny Memex has moved
 
-A project from Trevor Flowers at Transmutable.
+Hello! Trevor here.
 
-- [Raspberry Pi Installation](./INSTALLATION.md) (only necessary when using a new SD card)
-- [Install a GUI for external displays](./UPGRADE_FROM_LITE_TO_DESKTOP.md)
-- [Wood care](./WOOD_CARE.md) TODO
-- [Programming](./PROGRAMMING.md) TODO
+I've moved all of my repositories over to Codeberg.org, a great new host for open source projects.
 
+Here we go: (Codeberg.org/Transmutable/tiny-memex)[https://codeberg.org/Transmutable/tiny-memex].
